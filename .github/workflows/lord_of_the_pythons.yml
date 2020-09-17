@@ -44,8 +44,8 @@ jobs:
     - name: Run PayID
       uses: hammertoe/payid_action@master
       if: ${{ lotr.outputs.num > 0 }}
-      env:
+      with:
         PAYID_WALLET_SECRET: ${{ secrets.PAYID_WALLET_SECRET }}
-	amount: ${{ lotr.outputs.amount }}
+        amount: ${{ lotr.outputs.amount }}
 
         
