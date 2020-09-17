@@ -34,7 +34,8 @@ if __name__ == '__main__':
     
     print('new lotr', new_lotr)
 
-    return {'new_lotr': new_lotr,
-            'num': num,
-            'amount': int(1e6 * num)
-            }
+    print(f"::set-output name=new_lotr::{new_lotr}")
+    print(f"::set-output name=num::{num}")
+    print(f"::set-output name=amount::{amount}")
+    
+
