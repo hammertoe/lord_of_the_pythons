@@ -1,0 +1,6 @@
+name: 'Calculate the number of new Python variables named after LotR characters have been added'
+description: 'Calculate the number of new Python variables named after LotR characters have been added'
+author: 'Matt Hamilton'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

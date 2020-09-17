@@ -42,8 +42,7 @@ jobs:
 
     - name: Get number of new LotR characters
       id: lotr
-      run:
-        python lord_of_the_pythons.py
+      uses: hammertoe/lord_of_the_pythons@master
 
     - name: Run PayID
       uses: hammertoe/payid_xrp_action@1.1
