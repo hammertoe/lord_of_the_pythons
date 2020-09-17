@@ -1,0 +1,51 @@
+name: Lord of the Pythons
+
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the master branch
+  push:
+    branches:
+      - master
+
+
+jobs:
+  pay:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout code  
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 5
+
+    - name: Checkout prior code  
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.before }}
+        path: .old-code
+
+    - name: Checkout current code  
+      uses: actions/checkout@v2
+      with:
+        path: .new-code
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Get number of new LotR characters
+      id: lotr
+      run:
+        python lord_of_the_pythons.py
+
+    - name: Run PayID
+      uses: hammertoe/payid_action@master
+      if: ${{ lotr.outputs.num > 0 }}
+      env:
+        PAYID_WALLET_SECRET: ${{ secrets.PAYID_WALLET_SECRET }}
+	amount: ${{ lotr.outputs.amount }}
+
+        
