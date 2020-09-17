@@ -51,6 +51,6 @@ jobs:
       with:
         wallet_secret: ${{ secrets.PAYID_WALLET_SECRET }}
         amount: ${{ steps.lotr.outputs.amount }}
-	commit_log: ${{ env.commit_log }}
+        commit_log: ${{ env.commit_log }}
 
         
