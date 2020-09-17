@@ -1,8 +1,12 @@
-# lord_of_the_pythons
+# Lord of the Pythons
+
+![Party hard!](_images/gandalf_party_hard.gif)
 
 ## What?
 
-A Github Action that analyses Python code and detects new variables named after LotR characters and a workflow that pays developers as a reward
+A Github Action that analyses Python code and detects new variables named after LotR characters and a workflow that pays developers as a reward.
+
+When you push code to a Github repo it goes through all .py files it can find, parses them with an AST and pulls out the variable names. It then cross references them against LotR characters... and if you have increased the number of variables named after LotR characters in this set of commits then you are immediately paid an amount of XRP for your devotion and love.
 
 This action was created for the [DEV: Github Actions hackathon](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn).
 
