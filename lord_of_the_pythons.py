@@ -31,6 +31,7 @@ if __name__ == '__main__':
 
     new_lotr = (new_varnames - old_varnames) & lotr_names
     num = len(new_lotr)
+    amount = int(num * 1e6)
     
     print('new lotr', new_lotr)
 
